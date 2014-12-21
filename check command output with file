@@ -1,0 +1,20 @@
+#Author:Tohid.Tamboli
+#LICENSE GPL V2
+
+#!/bin/bash
+
+#Check Command output with file contents
+#Can be used in environment were outputs of every machine/server should be same. 
+#Check.txt file was created with contents of command uname -a
+
+commnd="$( uname -a )"
+textfile="$( cat check.txt )"
+
+if [ "$commnd" = "$textfile" ]; then
+	echo "You have access!"
+	
+else
+	
+	echo "ACCESS DENIED!"
+	
+fi
