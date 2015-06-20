@@ -1,3 +1,6 @@
+#Author:Tohid.Tamboli
+#LICENSE GPL V2
+
 #!/bin/bash
 
 HEXX=$(dmidecode | grep -m 1 Product | sed 's/^...............//')
